@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    table{
+        border : 1px solid;
+    }
+    thead{
+        border : 1px solid;
+    }
+    tbody {
+        border : 1px solid;
+    }
+</style>
+<body>
+    <table>
+        <thead>
+        <tr>
+            <th>
+              사원번호
+            </th>
+            <th>
+                사원이름
+            </th>
+            <th>
+                직업
+            </th>
+            <th>
+                고용일
+            </th>
+            <th>
+                월급
+            </th>
+            <th>
+                부서번호
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+      <tr th:each="emp:${list}">
+          <td th:text="${emp.empno}"></td>
+          <td th:text="${emp.ename}"></td>
+          <td th:text="${emp.job}"></td>
+          <td th:text="${emp.hiredate}"></td>
+          <td th:text="${emp.sal}"></td>
+          <td th:text="${emp.deptno}"></td>
+      </tr>
+        </tbody>
+    </table>
+</body>
+</html>
